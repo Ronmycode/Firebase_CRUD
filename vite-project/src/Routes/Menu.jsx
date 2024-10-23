@@ -2,6 +2,13 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import "../sass/Home.scss";
+import Products from "../Pages/Products";
+import Register from "../Pages/Register";
+import EditForm from "../Components/EditForm";
+import UserHome from "../Pages/UserHome";
+Register;
+
+Products;
 
 function Menu() {
   return (
@@ -9,7 +16,7 @@ function Menu() {
       <BrowserRouter>
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <img
                 src="https://res.cloudinary.com/dymsokiwr/image/upload/v1729572683/IF_Logo_Color_xrjsyf.png"
                 alt="Bootstrap"
@@ -35,17 +42,17 @@ function Menu() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/">My Account</Link>
+                    <Link to="/MyAccount">My Account</Link>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/">Productos</Link>
+                    <Link to="/Products">Productos</Link>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/">Financing</Link>
+                    <Link to="/Register">Register</Link>
                   </a>
                 </li>
                 {/*
@@ -99,6 +106,10 @@ function Menu() {
         {/* Routes  */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/editInventory/:id" element={<EditForm />} />
+          <Route path="/userhome" element={<UserHome />} />
         </Routes>
       </BrowserRouter>
     </div>
