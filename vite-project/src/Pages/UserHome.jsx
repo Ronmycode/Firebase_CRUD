@@ -1,9 +1,7 @@
 import { useState } from "react";
 import auth_user from "../Firebase/authConfig";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import Login from "../Components/Login";
-
-auth_user;
 
 function UserHome() {
   const [user, setUser] = useState(null);
@@ -16,14 +14,24 @@ function UserHome() {
     }
   });
 
+  //Logout Method
+  const logout = () => {
+    signOut(auth_user)
+      .then(() => {
+        alert("You Hvae closed your session!");
+      })
+      .catch((error) => {
+        console.error("There was an error closing your session", error);
+      });
+  };
+
   return (
     <div>
-      {/* user session validation */}
       {user ? (
         <>
           <h1>Welcome</h1>
           <p>you have entered your session</p>
-          <button>Log Out</button>
+          <button onClick={logout}>Log Out</button>
         </>
       ) : (
         <Login />
