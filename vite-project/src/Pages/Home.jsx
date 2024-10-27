@@ -1,4 +1,5 @@
 /* import "../sass/Home.scss"; */
+import "../sass/_Home.scss";
 function Home() {
   return (
     <div id="carouselExample" className="carousel slide">
@@ -47,16 +48,18 @@ function Home() {
         <span className="visually-hidden">Next</span>
       </button>
  */}
-      <div className="card">
-        <div className="card-header">Featured</div>
+      <div className="card card_style">
+        <div className="card-header">IN-STORE ONLY</div>
         <div className="card-body">
-          <h5 className="card-title">Special title treatment</h5>
+          <h5 className="card-title">0% interest for 60 months*</h5>
           <p className="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            quibusdam hic doloribus ipsam quam aut neque expedita, eos numquam
+            sit, sapiente veritatis atque mollitia voluptates iure earum debitis
+            qui! Perferendis iusto laboriosam ab numquam cumque modi officia
           </p>
           <a href="#" className="btn btn-primary">
-            Go somewhere
+            See if you prequalify
           </a>
         </div>
       </div>

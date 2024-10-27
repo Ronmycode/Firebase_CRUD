@@ -1,14 +1,11 @@
-import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
-import "../sass/Home.scss";
+import "../sass/style.scss";
 import Products from "../Pages/Products";
 import Register from "../Pages/Register";
 import EditForm from "../Components/EditForm";
 import UserHome from "../Pages/UserHome";
-Register;
-
-Products;
+import UserRegister from "../Pages/UserRegister";
 
 function Menu() {
   return (
@@ -45,11 +42,13 @@ function Menu() {
                     <Link to="/MyAccount">My Account</Link>
                   </a>
                 </li>
+
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
                     <Link to="/Products">Productos</Link>
                   </a>
                 </li>
+
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
                     <Link to="/Register">Register</Link>

@@ -24,6 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 /* const analytics = getAnalytics(app); */
 
+//connecting to auth in Firebase
 const auth_user = getAuth(app);
 
 export default auth_user;
