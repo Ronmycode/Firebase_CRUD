@@ -1,0 +1,25 @@
+{
+  "listTitle": "Spotify Playlists",
+  "list": [
+    {
+      "title": "Dance Party",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1728625550/DanceParty_szi8el.jpg"
+    },
+    {
+      "title": "Rock Party",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1728625551/RockParty_wf5dui.jpg"
+    },
+    {
+      "title": "Hip Hop Party",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1728625550/HipHopParty_qa2a1r.jpg"
+    },
+    {
+      "title": "90's Party",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1728625549/90sParty_dylttp.jpg"
+    },
+    {
+      "title": "80's Party",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1728625549/80sParty_r71puf.jpg"
+    }
+  ]
+}

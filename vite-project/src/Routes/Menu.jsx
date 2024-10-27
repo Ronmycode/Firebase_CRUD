@@ -11,7 +11,7 @@ function Menu() {
   return (
     <div>
       <BrowserRouter>
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg container">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <img

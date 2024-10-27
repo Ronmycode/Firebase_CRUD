@@ -1,1 +1,28 @@
+@import "./Variables";
 
+.card_style {
+  padding: 3rem 0;
+
+  width: 100%;
+}
+.card_style .card-header {
+  background-color: $palette2;
+  font-weight: 700;
+}
+
+.card .card-body {
+  background-color: $palette2;
+}
+.card-body .card-title {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.card-body .btn {
+  background-color: $palette4 !important;
+  border: none;
+  align-items: center;
+  color: $palette2;
+  font-weight: 600;
+  padding: 1rem;
+}

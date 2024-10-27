@@ -1,0 +1,25 @@
+{
+  "listTitle": "Top Deals",
+  "list": [
+    {
+      "title": "Hosting Essentials $899 & under",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1730060599/Mattress_TopDeals_5A_vfpz69.jpg"
+    },
+    {
+      "title": "Fall Clearence up to 50% OFF*",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1730060599/Mattress_TopDeals_5B_wi2bu9.webp"
+    },
+    {
+      "title": "New Dining Starting at $499.99",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1730060599/Mattress_TopDeals_5C_yn8kvv.webp"
+    },
+    {
+      "title": "Living Room Seating Starting at $199.99",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1730060599/Mattress_TopDeals_5D_tvknf9.webp"
+    },
+    {
+      "title": "Beds Starting at $149.99",
+      "img": "https://res.cloudinary.com/dymsokiwr/image/upload/v1730060599/Mattress_TopDeals_7E_marwqv.webp"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.musicList {
+  font-family: "Work Sans", sans-serif;
+  margin: 0.5rem;
+}
+
+.musicList h2 {
+  margin: 1.5rem 0 1rem 0.5rem;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.cardName {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /* This removes the scroll bar from the list */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.singlecard {
+  display: inline-block;
+  margin: 0.5rem;
+}
+.cardName img {
+  max-width: 50rem;
+  border-radius: 5px;
+}

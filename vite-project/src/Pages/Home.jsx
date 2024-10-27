@@ -1,68 +1,40 @@
-/* import "../sass/Home.scss"; */
+import CardList from "../Components/CardList";
 import "../sass/_Home.scss";
+import popularRadio from "../assets/popularRadio.json";
+
 function Home() {
   return (
-    <div id="carouselExample" className="carousel slide">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src="https://res.cloudinary.com/dymsokiwr/image/upload/v1729575383/Hero_carrousel_lsewld.webp
+    <div className="Home">
+      {/* top image */}
+      <img
+        className="d-block w-100"
+        src="https://res.cloudinary.com/dymsokiwr/image/upload/v1729575383/Hero_carrousel_lsewld.webp
 "
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="http://via.placeholder.com/1280x720
-"
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="http://via.placeholder.com/1280x720
-"
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
-      </div>
-      {/* <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
- */}
+      />
+      {/* FINANCING BANNER ADD */}
       <div className="card card_style">
-        <div className="card-header">IN-STORE ONLY</div>
-        <div className="card-body">
+        <div className="card-body text-center ">
+          <div className="card-header ">IN-STORE ONLY</div>
           <h5 className="card-title">0% interest for 60 months*</h5>
-          <p className="card-text">
+          <p className="card-text container">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
             quibusdam hic doloribus ipsam quam aut neque expedita, eos numquam
             sit, sapiente veritatis atque mollitia voluptates iure earum debitis
             qui! Perferendis iusto laboriosam ab numquam cumque modi officia
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+            accusamus dignissimos excepturi repellendus? Ratione, itaque.
           </p>
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn center">
             See if you prequalify
           </a>
         </div>
       </div>
+      <CardList listTitle={popularRadio.listTitle} list={popularRadio.list} />
+      <img
+        className="d-block w-100"
+        src="https://res.cloudinary.com/dymsokiwr/image/upload/v1730058840/tanks_giving_rfa3vp.jpg"
+      />
+      ;
     </div>
   );
 }

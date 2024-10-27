@@ -1,6 +1,34 @@
-/* @use "Variables" as *;
-background-color {
+@import "./Variables";
+
+footer {
+  bottom: 0;
   background-color: $palette5;
-  color: $palette3;
+  color: $palette1;
+  padding: 5rem 0;
 }
- */
+
+footer .footer-top {
+  margin: auto;
+}
+footer img {
+  max-height: 10rem;
+  width: auto;
+  object-fit: scale-down;
+}
+
+footer .subscribe-btn {
+  background-color: $palette4;
+}
+
+.links {
+  padding: 1rem !important;
+}
+.footer-links .links .title {
+  font-weight: 700 !important;
+}
+
+footer li {
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
