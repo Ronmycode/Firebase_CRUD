@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth_user from "../Firebase/authConfig";
 import { useNavigate } from "react-router-dom";
+import "../sass/_UserRegister.scss";
 
 //user and password validation
 const schema = yup.object().shape({
@@ -28,13 +29,12 @@ function UserRegister() {
   } = useForm({ resolver: yupResolver(schema) });
 
   //function to redirect
-  const navigate = useNavigate();
+  /*   const navigate = useNavigate("/home"); */
 
   const registerForm = (data) => {
     createUserWithEmailAndPassword(auth_user, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/"); // route to follow after successfully login in
       })
       .catch((error) => {
         console.log("Error to add User", error);
@@ -42,42 +42,51 @@ function UserRegister() {
   };
 
   return (
-    <div>
-      <h1>Register Form</h1>
-
-      <form onSubmit={handleSubmit(registerForm)}>
-        <div>
-          <label htmlFor="">Email Address</label>
-          <input
-            type="email"
-            placeholder="name@email.com"
-            {...register("email", { required: true })}
-          />
-          <span style={{ color: "red" }}>
-            {errors.email && errors.email.message}
-          </span>
-        </div>
-
-        <div>
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            placeholder="******"
-            {...register("password", { required: true })}
-          />
-          <span style={{ color: "red" }}>
-            {errors.password && errors.password.message}
-          </span>
-          <div>
-            <label htmlFor="">Confirm Password</label>
-            <input type="password" {...register("confirmPassword")} />
+    <div className="Register_wrapp">
+      <div className="backgroundimg"></div>
+      <div className="Register-box">
+        <p className="title">Register Form</p>
+        <form onSubmit={handleSubmit(registerForm)}>
+          <div className="user row">
+            <label className="col-4">Email</label>
+            <input
+              className="col-6"
+              type="email"
+              placeholder="name@email.com"
+              {...register("email", { required: true })}
+            />
             <span style={{ color: "red" }}>
-              {errors.confirmPassword && errors.confirmPassword.message}
+              {errors.email && errors.email.message}
             </span>
           </div>
-        </div>
-        <button type="submit">Register</button>
-      </form>
+
+          <div className="pass row">
+            <label className="col-4">Password</label>
+            <input
+              className="col-6"
+              type="password"
+              placeholder="******"
+              {...register("password", { required: true })}
+            />
+            <span style={{ color: "red" }}>
+              {errors.password && errors.password.message}
+            </span>
+            <div className="pass row">
+              <label className="col-4">Confirm Password</label>
+              <input
+                className="col-6"
+                type="password"
+                placeholder="******"
+                {...register("confirmPassword")}
+              />
+              <span style={{ color: "red" }}>
+                {errors.confirmPassword && errors.confirmPassword.message}
+              </span>
+            </div>
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import "../sass/_CardList.scss";
 function CardList({ listTitle, list }) {
   return (
-    <div className="musicList">
+    <div className="text-center">
       <h2>{listTitle}</h2>
       <div className="cardName">
         {list.map((item, index) => (

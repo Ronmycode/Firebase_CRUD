@@ -2,6 +2,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import db from "../Firebase/appConfig";
 import { useNavigate } from "react-router-dom";
+import "../sass/_Register.scss";
 
 function Register() {
   const {
@@ -30,17 +31,29 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="register-wrapp">
       <h2>Iventory Form</h2>
-      <form action="" onSubmit={handleSubmit(saveProduct)}>
-        <div>
-          <label htmlFor="">Add inventory</label>
-          <input type="text" {...register("name")} />
+      <div className="box"></div>
+      <form className="Register-item-box" onSubmit={handleSubmit(saveProduct)}>
+        <div className=" row">
+          <label className="col-4" htmlFor="">
+            Add inventory
+          </label>
+          <input className="col-6" type="text" {...register("name")} />
         </div>
 
-        <div>
-          <label htmlFor="">Color</label>
-          <input type="text" {...register("color")} />
+        <div className="row">
+          <label className="col-4" htmlFor="">
+            Color
+          </label>
+          <input className="col-6" type="text" {...register("color")} />
+        </div>
+
+        <div className="row">
+          <label className="col-4" htmlFor="">
+            Img
+          </label>
+          <input className="col-6" type="img" {...register("img")} />
         </div>
 
         <button type="submit">Save</button>

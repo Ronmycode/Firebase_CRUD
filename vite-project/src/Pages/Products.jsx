@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import db from "../Firebase/appConfig";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import "../sass/_Products.scss";
 
 function Products() {
   const [product, setproducts] = useState([]);
@@ -43,24 +44,30 @@ function Products() {
       console.error("There was an error deleting this product", error);
     }
   };
+
   return (
-    <div>
+    <div className="product-wrapper">
       <h2>Product List</h2>
-      <div>
+      <div className="col-10 text-center cardss">
         {product.length > 0 ? (
-          product.map((prod) => {
-            return (
-              <div key={prod.id}>
-                <div>
-                  <h3>{prod.name}</h3>
-                  <p>{prod.color}</p>
-                  {/*  */}
-                  <Link to={`/editInventory/${prod.id}`}>Edit</Link>
-                  <button onClick={() => deleteProduct(prod.id)}>Delete</button>
+          product.map((prod) => (
+            <div className="card-group" key={prod.id}>
+              <div className="card">
+                <img src={prod.img} className="card-img-top" alt="..."></img>
+                <div className="card-body">
+                  <h5 className="card-title">{prod.name}</h5>
+                  <p className="card-text">{prod.color}</p>
+                  {/* <img src={prod.img} alt="" /> */}
+                  <Link className="btn" to={`/editInventory/${prod.id}`}>
+                    Edit
+                  </Link>
+                  <Link className="btn" onClick={() => deleteProduct(prod.id)}>
+                    Delete
+                  </Link>
                 </div>
               </div>
-            );
-          })
+            </div>
+          ))
         ) : (
           <p>There is no Inventory</p>
         )}

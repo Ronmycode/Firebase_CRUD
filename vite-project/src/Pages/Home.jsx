@@ -7,7 +7,7 @@ function Home() {
     <div className="Home">
       {/* top image */}
       <img
-        className="d-block w-100"
+        className="d-block img-banner"
         src="https://res.cloudinary.com/dymsokiwr/image/upload/v1729575383/Hero_carrousel_lsewld.webp
 "
       />
@@ -29,9 +29,11 @@ function Home() {
           </a>
         </div>
       </div>
-      <CardList listTitle={popularRadio.listTitle} list={popularRadio.list} />
+      <div>
+        <CardList listTitle={popularRadio.listTitle} list={popularRadio.list} />
+      </div>
       <img
-        className="d-block w-100"
+        className="d-block img-banner"
         src="https://res.cloudinary.com/dymsokiwr/image/upload/v1730058840/tanks_giving_rfa3vp.jpg"
       />
       ;

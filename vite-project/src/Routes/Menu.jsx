@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import EditForm from "../Components/EditForm";
 import UserHome from "../Pages/UserHome";
 import UserRegister from "../Pages/UserRegister";
+import Login from "../Components/Login";
 
 function Menu() {
   return (
@@ -45,19 +46,17 @@ function Menu() {
 
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/Products">Productos</Link>
+                    <Link to="/Financing">Financing</Link>
                   </a>
                 </li>
 
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/Register">Register</Link>
+                    <Link to="/Inventory">Inventory</Link>
                   </a>
                 </li>
-                {/*
-                 *Dropdown menu disable
-                 */}
-                {/* <li className="nav-item dropdown">
+                {/* 
+               <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
                     href="#"
@@ -109,6 +108,8 @@ function Menu() {
           <Route path="/Register" element={<Register />} />
           <Route path="/editInventory/:id" element={<EditForm />} />
           <Route path="/userhome" element={<UserHome />} />
+          <Route path="/MyAccount" element={<Login />} />
+          <Route path="/UserRegister" element={<UserRegister />} />
         </Routes>
       </BrowserRouter>
     </div>

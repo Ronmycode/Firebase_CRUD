@@ -1,10 +1,24 @@
 @import "./Variables";
 
-.card_style {
-  padding: 3rem 0;
-
+.img-banner {
+  object-position: cover;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .img-banner {
+    object-fit: FILL;
+    /* object-position: left; */
+    height: 30vh; /* Increase height on smaller screens */
+  }
+}
+
+.card_style {
+  padding: 3rem 0;
+  width: 100%;
+  border: none;
+}
+
 .card_style .card-header {
   background-color: $palette2;
   font-weight: 700;
