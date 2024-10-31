@@ -25,15 +25,15 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="row footer-links">
-        <div className="links col text-center">
+      <div className="row footer-links justify-content-center">
+        <div className="links col-2 text-center">
           <p className="title ">About Insight</p>
           <li>About</li>
           <li>Careers</li>
           <li>News</li>
           <li>About Insight</li>
         </div>
-        <div className="links  col text-center">
+        <div className="links  col-2 text-center">
           <p className="title">Insight Help</p>
           <li>Accessibility</li>
           <li>Help Center</li>
@@ -42,14 +42,14 @@ function Footer() {
           <li>Price Match</li>
           <li>Child Safety</li>
         </div>
-        <div className="links col text-center">
+        <div className="links col-2 text-center">
           <p className="title">Services</p>
           <li>Financing</li>
           <li>Rewards</li>
           <li>Trade Program</li>
           <li>Delivery Methods</li>
         </div>
-        <div className="links  col text-center">
+        <div className="links  col-2 text-center">
           <p className="title">Legal</p>
           <li>Terms and Conditions</li>
           <li>Offers & Details</li>

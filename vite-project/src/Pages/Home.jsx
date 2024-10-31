@@ -13,9 +13,9 @@ function Home() {
       />
       {/* FINANCING BANNER ADD */}
       <div className="card card_style">
-        <div className="card-body text-center ">
+        <div className="card-body crd-body text-center ">
           <div className="card-header ">IN-STORE ONLY</div>
-          <h5 className="card-title">0% interest for 60 months*</h5>
+          <h5 className="card-titlee">0% interest for 60 months*</h5>
           <p className="card-text container">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
             quibusdam hic doloribus ipsam quam aut neque expedita, eos numquam

@@ -23,6 +23,7 @@ function Register() {
       await addDoc(collection(db, "Furniture"), {
         name: data.name,
         color: data.color,
+        img: data.img,
       });
     } catch {
       console.error("Error!! Product not added to the inventory", error);

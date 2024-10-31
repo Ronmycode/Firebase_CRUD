@@ -46,22 +46,32 @@ function Products() {
   };
 
   return (
-    <div className="product-wrapper">
+    <div className="product-wrapper container text-center">
       <h2>Product List</h2>
-      <div className="col-10 text-center cardss">
+      <div className="row ">
         {product.length > 0 ? (
           product.map((prod) => (
-            <div className="card-group" key={prod.id}>
-              <div className="card">
-                <img src={prod.img} className="card-img-top" alt="..."></img>
-                <div className="card-body">
+            <div className="col-sm col-md-6 card-wrapper " key={prod.id}>
+              <div className="card card-products">
+                <img
+                  src={`${prod.img}`}
+                  className="card-img-top"
+                  alt={prod.name}
+                ></img>
+                <div className="row card-body">
                   <h5 className="card-title">{prod.name}</h5>
-                  <p className="card-text">{prod.color}</p>
+                  <p className="card-text">Color: {prod.color}</p>
                   {/* <img src={prod.img} alt="" /> */}
-                  <Link className="btn" to={`/editInventory/${prod.id}`}>
+                  <Link
+                    className="col-12 btn-card-product"
+                    to={`/editInventory/${prod.id}`}
+                  >
                     Edit
                   </Link>
-                  <Link className="btn" onClick={() => deleteProduct(prod.id)}>
+                  <Link
+                    className=" col-12 btn-card-product "
+                    onClick={() => deleteProduct(prod.id)}
+                  >
                     Delete
                   </Link>
                 </div>

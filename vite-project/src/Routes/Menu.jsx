@@ -52,7 +52,7 @@ function Menu() {
 
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page">
-                    <Link to="/Inventory">Inventory</Link>
+                    <Link to="/Products">Products</Link>
                   </a>
                 </li>
                 {/* 

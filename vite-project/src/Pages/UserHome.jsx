@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import auth_user from "../Firebase/authConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import Login from "../Components/Login";
 import "../sass/_UserHome.scss";
 import Register from "./Register";
+import Products from "./Products";
+import EditForm from "../Components/EditForm";
 
 function UserHome() {
   const [user, setUser] = useState(null);
+  const [selectedComponent, setSelectedComponent] = useState("Dashboard");
 
-  onAuthStateChanged(auth_user, (userFirebase) => {
-    if (userFirebase) {
-      setUser(userFirebase);
-    } else {
-      setUser(null);
-    }
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth_user, (userFirebase) => {
+      if (userFirebase) {
+        setUser(userFirebase);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe(); // Clean up on unmount
+  }, []);
 
   //Logout Method
   const logout = () => {
@@ -27,49 +34,79 @@ function UserHome() {
       });
   };
 
+  // Function to render components based on selectedComponent
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case "Dashboard":
+        return <h2>Dashboard Content</h2>;
+      case "Inventory":
+        return <Products />;
+      case "AddInventory":
+        return <Register />;
+      case "Activity":
+        return <EditForm />;
+      case "Register":
+        return <h2>Activity Content</h2>;
+      default:
+        return <h2>Welcome</h2>;
+    }
+  };
+
   return (
     <div>
       {user ? (
-        <div className="UserHome row">
+        <div className="UserHome row ">
           {/* 
           #### User Home Left side
           */}
           <div className="user_col_left col">
-            <div className="user_info">
-              <p>User Name</p>
+            <div className="user_info ">
+              {/* <p>User Name</p> This will be added later on*/}
               <div className="img_prof">
-                {/*    <img
-                  src="https://res.cloudinary.com/dymsokiwr/image/upload/v1730178008/avatar_vnfgui.png"
+                <img
+                  src="https://res.cloudinary.com/dymsokiwr/image/upload/v1730260595/avatar_osjnla.jpg"
                   alt="Avatar"
-                /> */}
+                />
               </div>
               <div className="user_menu">
                 <ul className="">
-                  <li>
-                    <button className="btn">
+                  <li className="text-center">
+                    <button
+                      onClick={() => setSelectedComponent("Dashboard")}
+                      className="btn"
+                    >
                       <i className="bi bi-speedometer"></i>
                       Dashboard
                     </button>
                   </li>
-                  <li>
-                    <button className="btn">
+                  <li className="text-center">
+                    <button
+                      onClick={() => setSelectedComponent("Inventory")}
+                      className="btn"
+                    >
+                      <i className="bi bi-bag-check"></i>
+                      Inventory
+                    </button>
+                  </li>
+                  <li className="text-center">
+                    <button
+                      onClick={() => setSelectedComponent("AddInventory")}
+                      className="btn"
+                    >
                       <i className="bi bi-briefcase"></i>
-                      Clients
+                      Add Inventory
                     </button>
                   </li>
-                  <li>
-                    <button className="btn">
-                      <i className="bi bi-person"></i>
-                      Memebers
-                    </button>
-                  </li>
-                  <li>
-                    <button className="btn">
+                  <li className="text-center">
+                    <button
+                      onClick={() => setSelectedComponent("EditForm")}
+                      className="btn"
+                    >
                       <i className="bi bi-bell"></i>
-                      Activity
+                      Edit Form
                     </button>
                   </li>
-                  <li>
+                  <li className="text-center">
                     <button onClick={logout} className="btn logout">
                       <i className="bi bi-box-arrow-left"></i>
                       Logout
@@ -83,10 +120,10 @@ function UserHome() {
           #### User Home center
           */}
 
-          <div className="user_col_center col-lg-6">
-            <h1>Welcome</h1>
-            <p>you have entered your session</p>
-            <Register />
+          <div className="user_col_center col-lg-6 ">
+            <h1 className="welcome-title">Welcome</h1>
+            <p className="welcome-sub-title">you have entered your session</p>
+            {renderComponent()}
           </div>
 
           {/* 

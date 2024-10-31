@@ -1,7 +1,33 @@
-.cardss {
-  display: inline-block;
+@import "./Variables";
+
+.card-products {
+  max-width: 18rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid $palette3;
+  border-radius: 5px;
+  background-color: $palette1;
+
+  img {
+    border-radius: 5px;
+    background-color: $palette2;
+    height: 15rem;
+    object-fit: contain;
+  }
+}
+.card-wrapper {
+  @media (max-width: 575px) {
+    justify-items: center;
+  }
 }
 
-.card {
-  width: 18rem;
+.btn-card-product {
+  background-color: $palette5;
+  text-decoration: none;
+  font-weight: 600;
+  color: $palette1;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
