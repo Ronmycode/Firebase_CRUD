@@ -1,12 +1,12 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Home from "../Pages/Home";
+import Home from "../Pages/Home.jsx";
 import "../sass/style.scss";
-import Products from "../Pages/Products";
-import Register from "../Pages/Register";
-import EditForm from "../Components/EditForm";
-import UserHome from "../Pages/UserHome";
-import UserRegister from "../Pages/UserRegister";
-import Login from "../Components/Login";
+import Products from "../Pages/Products.jsx";
+import Register from "../Pages/Register.jsx";
+import EditForm from "../Components/EditForm.jsx";
+import UserHome from "../Pages/UserHome.jsx";
+import UserRegister from "../Pages/UserRegister.jsx";
+import Login from "../Components/Login.jsx";
 
 function Menu() {
   return (

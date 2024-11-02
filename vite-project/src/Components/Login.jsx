@@ -6,7 +6,6 @@ import "../sass/_Login.scss";
 import { Link, useNavigate } from "react-router-dom";
 //tHIS WILL LOOK FOR AN EXISTING TOKEN IN THE LOCAL STORAGE
 import { useEffect } from "react";
-import UserRegister from "../Pages/UserRegister";
 
 export function Login() {
   const {

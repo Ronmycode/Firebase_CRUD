@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import auth_user from "../Firebase/authConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import Login from "../Components/Login";
+import Login from "../Components/Login.jsx";
 import "../sass/_UserHome.scss";
-import Register from "./Register";
-import Products from "./Products";
-import EditForm from "../Components/EditForm";
+import Register from "./Register.jsx";
+import Products from "./Products.jsx";
+import EditForm from "../Components/EditForm.jsx";
 
 function UserHome() {
   const [user, setUser] = useState(null);

@@ -1,4 +1,4 @@
-import CardList from "../Components/CardList";
+import CardList from "../Components/CardList.jsx";
 import "../sass/_Home.scss";
 import popularRadio from "../assets/popularRadio.json";
 

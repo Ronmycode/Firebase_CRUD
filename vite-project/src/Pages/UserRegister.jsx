@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth_user from "../Firebase/authConfig";
-import { useNavigate } from "react-router-dom";
+
 import "../sass/_UserRegister.scss";
 
 //user and password validation
